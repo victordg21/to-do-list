@@ -3,14 +3,14 @@
 </script>
 
 <template>
-    <ul>
+<ul>
     <li v-for="tasks in props.tasks">
         <input @change="event => tasks.done = event.target.checked" :checked="tasks.done" :id="tasks.title" type="checkbox" class="checkbox">
         <label :class="{done: tasks.done}" :for="tasks.title">
-        {{tasks.title}}
+            {{tasks.title}}
         </label>
     </li>
-    </ul>
+</ul>
 </template>
 
 <style scoped>
@@ -38,4 +38,10 @@ label{
 .done{
     text-decoration: line-through;
     }
+
+@media (max-width:767px){
+    li{
+        width: 300px;
+    }
+}
 </style>
